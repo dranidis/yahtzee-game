@@ -1,0 +1,42 @@
+body {
+    background-color: burlywood;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.catscore {
+    /* display: none; */
+    background-color: whitesmoke;
+}
+
+td {
+    text-align: right;
+    min-width: 2em;
+    padding: 5px;
+}
+
+.die {
+    font-size: xx-large;
+    color: darkred;
+    display: inline-block;
+    width: 50px;
+    text-align: center;
+    cursor: no-drop;
+}
+
+.dieKeep {
+    color: indianred;
+    cursor: default;
+}
+
+.player {
+    display: inline-block;
+    padding: 15px;
+}
+
+.score {
+    font-size: x-large;
+}
+
+.current {
+    background-color: lightgoldenrodyellow;
+}

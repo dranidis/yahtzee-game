@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Yahtzee!</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+
+    <link href="css/custom.css" rel="stylesheet">
+    <script src="js/custom.js"></script>
+</head>
+
+<body>
+    <div id="startContainer" class="container">
+        <br><br>
+        <h1 class="header center blue-text">Yahtzee</h1>
+        <div class="row center">
+            <div id="nameenter" class="row center">
+                <form class="col s12">
+                    <div class="row ">
+                        <div class="input-field col s8">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input id="playerName" type="text" value="Guest" />
+                            <label for="playerName">First Name</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <button id="addPlayerBtn" class="waves-effect waves-light btn-small">Join</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row center">
+            <button id="startBtn" class="waves-effect waves-light btn-small">Start</button>
+        </div>
+    </div>
+    <div id="playerContainer" class="container">
+        <div class="row center">
+            <div id="players"></div>
+        </div>
+    </div>
+    <div id="gameControl" class="container">
+        <div class="row center">
+            <div class="col s2">
+            </div>
+            <div class="col s8">
+
+                <div class="row center">
+                    <span id="dice">
+                        <span class="die" id="die1"></span>
+                        <span class="die" id="die2"></span>
+                        <span class="die" id="die3"></span>
+                        <span class="die" id="die4"></span>
+                        <span class="die" id="die5"></span>
+                    </span>
+                </div>
+                <div class="row center">
+                    <span>
+                        <button id="keepBtn" class="waves-effect waves-light btn-small">Roll</button>
+                        <button id="restartBtn" class="waves-effect waves-light btn-small">Restart</button>
+                    </span>
+                </div>
+                <div class="row center">
+                    <table>
+                        <tr>
+                            <td class="catlabel">1's</td>
+                            <td class="catscore" id="1s"></td>
+                            <td class="catlabel">3 of a kind</td>
+                            <td class="catscore" id="3k"></td>
+                        </tr>
+                        <tr>
+                            <td class="catlabel">2's</td>
+                            <td class="catscore" id="2s"></td>
+                            <td class="catlabel">4 of a kind</td>
+                            <td class="catscore" id="4k"></td>
+                        </tr>
+                        <tr>
+                            <td class="catlabel">3's</td>
+                            <td class="catscore" id="3s"></td>
+                            <td class="catlabel">Full House</td>
+                            <td class="catscore" id="fh"></td>
+                        </tr>
+                        <tr>
+                            <td class="catlabel">4's</td>
+                            <td class="catscore" id="4s"></td>
+                            <td class="catlabel">Sm. Straight</td>
+                            <td class="catscore" id="s4"></td>
+                        </tr>
+                        <tr>
+                            <td class="catlabel">5's</td>
+                            <td class="catscore" id="5s"></td>
+                            <td class="catlabel">Lg. Straight</td>
+                            <td class="catscore" id="s5"></td>
+                        </tr>
+                        <tr>
+                            <td class="catlabel">6's</td>
+                            <td class="catscore" id="6s"></td>
+                            <td class="catlabel">Yahtzee</td>
+                            <td class="catscore" id="5k"></td>
+                        </tr>
+                        <tr>
+                            <td class="catlabel">Bonus</td>
+                            <td id="UB">0</td>
+                            <td class="catlabel">Chance</td>
+                            <td class="catscore" id="ch"></td>
+                        </tr>
+                        <tr>
+                            <td class="catlabel">Section Total</td>
+                            <td id="US">0</td>
+                            <td class="catlabel">Yahtzee Bonus</td>
+                            <td id="YB">0</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td class="catlabel">Total</td>
+                            <td id="TS">0</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="col s2">
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+
+</body>
+
+</html>
