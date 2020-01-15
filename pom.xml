@@ -19,4 +19,7 @@
     <module>yahtzee-spring</module>
   </modules>
 
+  <dependencies>
+
+  </dependencies>
 </project>
